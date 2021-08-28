@@ -1,11 +1,16 @@
 package com.example.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
 public class EmployeeEntity implements Serializable {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 
 	private String fname;
@@ -16,6 +21,16 @@ public class EmployeeEntity implements Serializable {
 
 	private String phone;
 
+	public EmployeeEntity() {
+	}
+
+	public EmployeeEntity(int id, String fname, String lname, String email, String phone) {
+		this.id = id;
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.phone = phone;
+	}
 
 	public int getId() {
 		return id;

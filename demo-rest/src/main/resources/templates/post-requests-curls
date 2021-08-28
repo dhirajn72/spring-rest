@@ -1,0 +1,16 @@
+curl -X POST \
+  http://localhost:8080/employee/save \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: fbf334c0-a429-6165-ae30-01adbaab515b' \
+  -d '{
+
+	"id":"1",
+	"fname":"kumar",
+	"lname":"dhiraj",
+	"email":"dk@gmail.com",
+	"phone":"3456"
+}'
+
+
+

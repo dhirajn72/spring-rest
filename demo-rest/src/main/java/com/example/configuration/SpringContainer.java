@@ -9,9 +9,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
-@Configuration
+//@Configuration
 public class SpringContainer {
 
+	/*
 	@Bean
 	@ConfigurationProperties("app.datasource")
 	public HikariDataSource dataSource() {
@@ -26,5 +27,7 @@ public class SpringContainer {
 				.persistenceUnit("employees")
 				.build();
 	}
+
+	 */
 
 }

@@ -1,8 +1,11 @@
 package com.example.dao;
 
-import org.springframework.data.repository.CrudRepository;
+import com.example.entity.EmployeeEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-public interface EmployeeDao<EmployeeEntity> {
+@Repository
+public interface EmployeeDao {
 	public EmployeeEntity create(EmployeeEntity entry);
 	public EmployeeEntity getById(int employeeId);
 	public EmployeeEntity getAll();

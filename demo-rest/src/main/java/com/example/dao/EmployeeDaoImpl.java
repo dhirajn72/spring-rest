@@ -1,27 +1,25 @@
 package com.example.dao;
 
+import com.example.datasource.HibernateUtil;
 import com.example.entity.EmployeeEntity;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
-import org.springframework.transaction.annotation.Transactional;
+import org.hibernate.Transaction;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
+@Repository
+public class EmployeeDaoImpl implements EmployeeDao {
 
-public class EmployeeDaoImpl implements EmployeeDao<EmployeeEntity> {
 
-	@Autowired
-	private SessionFactory sessionFactory;
-
-	@Autowired
-	LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean;
-
-	@Transactional
 	@Override
 	public EmployeeEntity create(EmployeeEntity entry) {
-		Session session=sessionFactory.openSession();
-		return (EmployeeEntity) session.save(entry);
+		Session session = HibernateUtil.getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		Integer addressId = (Integer) session.save(entry);
+		//Integer bookingId = (Integer) session.save();
+		transaction.commit();
+		session.close();
+		return entry;
+
 	}
 
 	@Override

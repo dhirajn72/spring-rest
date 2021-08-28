@@ -11,6 +11,14 @@ public class EmployeeEntry {
 
 	private String phone;
 
+	public EmployeeEntry(int id, String fname, String lname, String email, String phone) {
+		this.id = id;
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.phone = phone;
+	}
+
 	public int getId() {
 		return id;
 	}

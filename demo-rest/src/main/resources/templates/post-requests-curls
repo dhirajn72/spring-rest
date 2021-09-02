@@ -2,15 +2,28 @@ curl -X POST \
   http://localhost:8080/employee/save \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -H 'postman-token: fbf334c0-a429-6165-ae30-01adbaab515b' \
+  -H 'postman-token: fd890d3c-f62d-3215-950e-8fa2982f0860' \
   -d '{
 
 	"id":"1",
 	"fname":"kumar",
 	"lname":"dhiraj",
 	"email":"dk@gmail.com",
-	"phone":"3456"
+	"phone":"3456",
+	"date":"2021-09-02T13:10:36.714"
 }'
 
+curl -X PUT \
+  http://localhost:8080/employee/1 \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -H 'postman-token: 4ffcb808-0f9e-c00c-3b3a-aaa7f9c9b7b9' \
+  -d '{
 
-
+	"id":"1",
+	"fname":"kumar",
+	"lname":"dhiraj",
+	"email":"dk@gmail.com",
+	"phone":"34567",
+	"date":"2021-09-02T13:10:36.714"
+}'

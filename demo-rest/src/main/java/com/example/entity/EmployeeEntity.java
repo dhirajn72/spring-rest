@@ -21,15 +21,26 @@ public class EmployeeEntity implements Serializable {
 
 	private String phone;
 
+	private String date;
+
 	public EmployeeEntity() {
 	}
 
-	public EmployeeEntity(int id, String fname, String lname, String email, String phone) {
+	public EmployeeEntity(int id, String fname, String lname, String email, String phone,String date) {
 		this.id = id;
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
 		this.phone = phone;
+		this.date=date;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public int getId() {

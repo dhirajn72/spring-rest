@@ -15,12 +15,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public EmployeeEntry create(EmployeeEntry entry) {
-		return Builder.convert(employeeDao.create(Builder.convert(entry, null)), null);
+		return employeeDao.create(Builder.convert(entry, null));
 	}
 
 	@Override
-	public EmployeeEntry getById(int employeeId) {
-		return null;
+	public EmployeeEntry findById(int employeeId) {
+		return employeeDao.findById(employeeId);
 	}
 
 	@Override
@@ -30,6 +30,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public EmployeeEntry update(EmployeeEntry entry) {
-		return null;
+		return employeeDao.update(Builder.convert(entry,null));
 	}
 }

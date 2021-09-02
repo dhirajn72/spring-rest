@@ -11,12 +11,15 @@ public class EmployeeEntry {
 
 	private String phone;
 
-	public EmployeeEntry(int id, String fname, String lname, String email, String phone) {
+	private String  date;
+
+	public EmployeeEntry(int id, String fname, String lname, String email, String phone,String date) {
 		this.id = id;
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
 		this.phone = phone;
+		this.date=date;
 	}
 
 	public int getId() {
@@ -57,5 +60,13 @@ public class EmployeeEntry {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 }

@@ -29,3 +29,13 @@ And don't give any password let the username as `sa` as default.
 Click test connection, you should be able to see message below: 
 
 `Test successful`
+
+
+
+Build command and deploy command
+-----------------------------------
+mvn clean install && mvn spring-boot:run -Drun.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005"
+
+Connect intellij to debug
+---------------------------
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
